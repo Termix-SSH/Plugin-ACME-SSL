@@ -3,8 +3,8 @@ import { render, screen, waitFor } from "@testing-library/react";
 import {
   renderWithApp,
   type RenderedPluginApp,
-} from "@termix/plugin-sdk/testing";
-import type { PluginManifest } from "@termix/plugin-sdk/manifest";
+} from "@termix-ssh/plugin-sdk/testing";
+import type { PluginManifest } from "@termix-ssh/plugin-sdk/manifest";
 import * as plugin from "../../src/frontend/index";
 import manifestJson from "../../manifest.json";
 import locales from "../../locales/en.json";
@@ -14,8 +14,8 @@ const api = vi.hoisted(() => ({
   post: vi.fn(),
 }));
 
-vi.mock("@termix/plugin-sdk/frontend", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@termix/plugin-sdk/frontend")>()),
+vi.mock("@termix-ssh/plugin-sdk/frontend", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@termix-ssh/plugin-sdk/frontend")>()),
   useTranslation: () => ({
     t: (key: string, values?: Record<string, string>) =>
       values ? `${key} ${Object.values(values).join(" ")}` : key,

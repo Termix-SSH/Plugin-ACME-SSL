@@ -2,7 +2,7 @@ import type {
   PluginContext,
   PluginTlsReloadResult,
   PluginTlsStatus,
-} from "@termix/plugin-sdk/backend";
+} from "@termix-ssh/plugin-sdk/backend";
 import type { IssuedCertificate } from "./acme.js";
 import { renewalReason } from "./renewal.js";
 import {

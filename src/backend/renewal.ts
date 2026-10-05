@@ -1,4 +1,4 @@
-import type { PluginTlsStatus } from "@termix/plugin-sdk/backend";
+import type { PluginTlsStatus } from "@termix-ssh/plugin-sdk/backend";
 
 export const RENEW_BEFORE_MS = 30 * 86_400_000;
 

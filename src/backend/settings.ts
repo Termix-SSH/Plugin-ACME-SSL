@@ -1,4 +1,4 @@
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 
 export type AcmeProvider = "letsencrypt" | "letsencrypt-staging" | "custom";
 export type AcmeChallengeType = "http-01" | "dns-cloudflare";

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import type { PluginFetchInit } from "@termix/plugin-sdk/backend";
+import type { PluginFetchInit } from "@termix-ssh/plugin-sdk/backend";
 import { createFetchAdapter } from "../../src/backend/acme.js";
 import { createTxtRecord } from "../../src/backend/cloudflare.js";
 

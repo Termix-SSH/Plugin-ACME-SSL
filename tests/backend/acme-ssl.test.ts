@@ -5,13 +5,13 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   createMockCtx,
   type MockPluginContext,
-} from "@termix/plugin-sdk/testing";
+} from "@termix-ssh/plugin-sdk/testing";
 import type {
   PluginCapabilityError as CapabilityError,
   PluginTlsCertificateInfo,
   PluginTlsStatus,
-} from "@termix/plugin-sdk/backend";
-import type { PluginManifest } from "@termix/plugin-sdk/manifest";
+} from "@termix-ssh/plugin-sdk/backend";
+import type { PluginManifest } from "@termix-ssh/plugin-sdk/manifest";
 import manifestJson from "../../manifest.json";
 import { activateWith } from "../../src/backend/index.js";
 import { CHECK_INTERVAL_MS, RETRY_AFTER_MS } from "../../src/backend/runner.js";

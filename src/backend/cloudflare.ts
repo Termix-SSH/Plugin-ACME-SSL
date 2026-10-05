@@ -1,4 +1,4 @@
-import type { PluginFetch } from "@termix/plugin-sdk/backend";
+import type { PluginFetch } from "@termix-ssh/plugin-sdk/backend";
 
 const API = "https://api.cloudflare.com/client/v4";
 

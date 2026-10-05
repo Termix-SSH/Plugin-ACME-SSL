@@ -4,8 +4,8 @@ import {
   usePluginApi,
   useTranslation,
   type SettingsComponentProps,
-} from "@termix/plugin-sdk/frontend";
-import { Button } from "@termix/plugin-sdk/ui";
+} from "@termix-ssh/plugin-sdk/frontend";
+import { Button } from "@termix-ssh/plugin-sdk/ui";
 
 export interface AcmeStatus {
   tls: {

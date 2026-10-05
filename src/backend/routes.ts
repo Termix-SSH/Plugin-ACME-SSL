@@ -1,5 +1,5 @@
 import type { Request, RequestHandler, Response, Router } from "express";
-import type { PluginContext } from "@termix/plugin-sdk/backend";
+import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 import { AcmeNotConfiguredError, type AcmeRunner } from "./runner.js";
 import { missingSetting, readSettings } from "./settings.js";
 

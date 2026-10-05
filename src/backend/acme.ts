@@ -5,7 +5,7 @@
  */
 
 import * as acme from "acme-client";
-import type { PluginContext, PluginFetch } from "@termix/plugin-sdk/backend";
+import type { PluginContext, PluginFetch } from "@termix-ssh/plugin-sdk/backend";
 import { createTxtRecord } from "./cloudflare.js";
 import { directoryUrlFor, type AcmeSettings } from "./settings.js";
 
