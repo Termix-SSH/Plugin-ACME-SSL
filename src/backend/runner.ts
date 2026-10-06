@@ -18,7 +18,7 @@ export const RETRY_AFTER_MS = 6 * 60 * 60 * 1000;
 
 const STATE_KEY = "state";
 
-export interface AcmeState {
+interface AcmeState {
   lastAttemptAt: string | null;
   lastIssuedAt: string | null;
   lastError: string | null;
@@ -35,7 +35,7 @@ export class AcmeNotConfiguredError extends Error {
   }
 }
 
-export interface IssueResult {
+interface IssueResult {
   tls: PluginTlsStatus;
   reload: PluginTlsReloadResult;
 }

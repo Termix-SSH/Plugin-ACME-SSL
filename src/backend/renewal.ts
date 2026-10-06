@@ -1,6 +1,6 @@
 import type { PluginTlsStatus } from "@termix-ssh/plugin-sdk/backend";
 
-export const RENEW_BEFORE_MS = 30 * 86_400_000;
+const RENEW_BEFORE_MS = 30 * 86_400_000;
 
 export type RenewalReason = "missing" | "self-signed" | "domain" | "expiring";
 

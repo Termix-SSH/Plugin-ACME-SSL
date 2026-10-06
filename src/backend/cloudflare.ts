@@ -37,7 +37,7 @@ async function call<T>(
 }
 
 /** The zone holding `name`, found by trying each parent domain. */
-export async function findZoneId(
+async function findZoneId(
   fetch: PluginFetch,
   token: string,
   name: string,

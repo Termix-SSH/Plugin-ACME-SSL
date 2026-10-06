@@ -1,7 +1,7 @@
 import type { PluginContext } from "@termix-ssh/plugin-sdk/backend";
 
-export type AcmeProvider = "letsencrypt" | "letsencrypt-staging" | "custom";
-export type AcmeChallengeType = "http-01" | "dns-cloudflare";
+type AcmeProvider = "letsencrypt" | "letsencrypt-staging" | "custom";
+type AcmeChallengeType = "http-01" | "dns-cloudflare";
 
 export interface AcmeSettings {
   autoRenew: boolean;
@@ -23,7 +23,7 @@ export const SETTING_KEYS = [
   "cloudflareToken",
 ] as const;
 
-export const DIRECTORIES: Record<Exclude<AcmeProvider, "custom">, string> = {
+const DIRECTORIES: Record<Exclude<AcmeProvider, "custom">, string> = {
   letsencrypt: "https://acme-v02.api.letsencrypt.org/directory",
   "letsencrypt-staging":
     "https://acme-staging-v02.api.letsencrypt.org/directory",
