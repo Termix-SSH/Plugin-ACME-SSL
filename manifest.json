@@ -10,6 +10,12 @@
   "repository": "https://github.com/Termix-SSH/Plugin-ACME-SSL",
   "category": "Access & Security",
   "icon": "Lock",
+  "features": [
+    "Certificates from Let's Encrypt or any ACME directory",
+    "HTTP challenge on port 80, or a Cloudflare DNS challenge when port 80 is closed",
+    "Renews before the certificate expires",
+    "Swaps in the new certificate without a restart"
+  ],
   "engine": {
     "termix": ">=26.10.0",
     "api": "1"
