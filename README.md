@@ -4,7 +4,7 @@
 
 <h1>ACME Certificates</h1>
 
-<p>Free HTTPS certificates for your Termix server, renewed for you</p>
+<p>Gets the Termix HTTPS certificate from Let's Encrypt or any ACME provider and renews it for you</p>
 
 </div>
 
@@ -16,12 +16,70 @@ ACME Certificates gets the HTTPS certificate Termix serves from Let's Encrypt or
 
 <br />
 
+## Install
+
+ACME Certificates ships with [Termix](https://github.com/Termix-SSH/Termix). Admins can turn it on or off, update it or install it again from the Plugins tab. Want to see it first? Try the [demo](https://demo.termix.site/), any username and password works.
+
+<br />
+
 ## Features
 
 - Certificates from Let's Encrypt or any ACME directory
 - HTTP challenge on port 80, or a Cloudflare DNS challenge when port 80 is closed
 - Renews before the certificate expires
 - Swaps in the new certificate without a restart
+
+<br />
+
+## Sponsors
+
+Interested in a paid placement to support development? Email [mail@termix.site](mailto:mail@termix.site).
+
+<!-- SPONSORS:START -->
+
+<div align="center">
+
+<br />
+
+<a href="https://www.digitalocean.com/">
+  <img src="https://termix.site/img/sponsors/digitalocean.svg" height="40" alt="DigitalOcean" />
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://crowdin.com/">
+  <img src="https://termix.site/img/sponsors/crowdin.svg" height="40" alt="Crowdin" />
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://www.blacksmith.sh/">
+  <img src="https://termix.site/img/sponsors/blacksmith.svg" height="40" alt="Blacksmith" />
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://www.cloudflare.com/">
+  <img src="https://termix.site/img/sponsors/cloudflare.png" height="40" alt="Cloudflare" />
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://akamai.com/">
+  <img src="https://termix.site/img/sponsors/akamai.svg" height="40" alt="Akamai" />
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://aws.amazon.com/">
+  <img src="https://termix.site/img/sponsors/aws.png" height="40" alt="AWS" />
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://rackgenius.com/">
+  <img src="https://termix.site/img/sponsors/rackgenius.png" height="40" alt="Rack Genius" />
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://ginernet.com/">
+  <img src="https://termix.site/img/sponsors/ginernet.png" height="40" alt="Ginernet" />
+</a>
+&nbsp;&nbsp;&nbsp;
+<a href="https://www.hetzner.com/?mtm_campaign=termix&mtm_medium=referral&mtm_content=sponsoring_link">
+  <img src="https://termix.site/img/sponsors/hetzner.png" height="40" alt="Hetzner" />
+</a>
+
+</div>
+
+<!-- SPONSORS:END -->
 
 <br />
 
