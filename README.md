@@ -14,6 +14,8 @@
 
 ACME Certificates gets the HTTPS certificate Termix serves from Let's Encrypt or any other ACME provider and keeps it renewed.
 
+Read the [docs](https://docs.termix.site/plugins/acme-ssl) to set it up and use it.
+
 <br />
 
 ## Features

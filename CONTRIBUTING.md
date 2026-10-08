@@ -10,18 +10,6 @@ npm run validate   # check manifest.json
 npm run format     # format the code with Prettier
 ```
 
-## Settings
+## Docs
 
-### Admin
-
-- **Renew automatically:** checks twice a day and renews when there is no certificate, it is self-signed, it does not cover the domain, or it expires within 30 days
-- **Domain:** the public domain name the certificate covers
-- **Email:** the contact email for the ACME account
-- **Certificate authority:** Let's Encrypt, Let's Encrypt staging, or a custom ACME directory
-- **ACME directory URL:** only for a custom authority, and must be https
-- **Challenge type:** HTTP or DNS (Cloudflare)
-- **Cloudflare API token:** used by the DNS challenge, stored encrypted
-
-## Permissions
-
-- `acme-ssl.manage`: see the certificate status and request a new certificate. Only admins have it by default.
+The docs for this plugin are in [docs/](docs/) and are published at https://docs.termix.site/plugins/acme-ssl. Settings, permissions, services, environment variables and the API reference are made from `manifest.json` and the `@openapi` comments in the code, so keep those up to date instead of writing them by hand. See [writing docs](https://docs.termix.site/develop/docs).
