@@ -14,7 +14,11 @@ import type {
 import type { PluginManifest } from "@termix-ssh/plugin-sdk/manifest";
 import manifestJson from "../../manifest.json";
 import { activateWith } from "../../src/backend/index.js";
-import { CHECK_INTERVAL_MS, RETRY_AFTER_MS } from "../../src/backend/runner.js";
+import {
+  CHECK_INTERVAL_MS,
+  RETRY_AFTER_MS,
+  describeError,
+} from "../../src/backend/runner.js";
 import { renewalReason } from "../../src/backend/renewal.js";
 
 const manifest = manifestJson as unknown as PluginManifest;
@@ -265,5 +269,25 @@ describe("capabilities", () => {
     ).rejects.toMatchObject({
       capability: "system:tls",
     } satisfies Partial<CapabilityError>);
+  });
+});
+
+describe("describeError", () => {
+  it("shows the reason behind fetch failed", () => {
+    expect(
+      describeError(
+        new TypeError("fetch failed", {
+          cause: new Error("Private destinations are not allowed"),
+        }),
+      ),
+    ).toMatch(/private network/);
+    expect(
+      describeError(
+        new TypeError("fetch failed", {
+          cause: new Error("self-signed certificate"),
+        }),
+      ),
+    ).toBe("Could not reach the ACME directory: self-signed certificate");
+    expect(describeError(new Error("rateLimited"))).toBe("rateLimited");
   });
 });
