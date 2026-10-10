@@ -1,11 +1,5 @@
 # Changelog
 
-## 1.0.1
-
-### Fixed
-
-- A failed certificate request says why instead of fetch failed
-
 ## 1.0.0
 
 ### Added
