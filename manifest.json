@@ -1,7 +1,7 @@
 {
   "id": "acme-ssl",
   "name": "ACME Certificates",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gets the Termix HTTPS certificate from Let's Encrypt or any ACME provider and renews it for you.",
   "author": {
     "name": "Termix"
@@ -36,7 +36,9 @@
         "name": "manage",
         "titleKey": "permissions.manage.title",
         "descriptionKey": "permissions.manage.description",
-        "defaultRoles": ["admin"]
+        "defaultRoles": [
+          "admin"
+        ]
       }
     ],
     "settings": {
@@ -124,6 +126,10 @@
     }
   },
   "locales": "locales",
-  "platforms": ["linux", "win32", "darwin"],
+  "platforms": [
+    "linux",
+    "win32",
+    "darwin"
+  ],
   "desktop": "server"
 }
