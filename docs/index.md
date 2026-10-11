@@ -12,25 +12,25 @@ Use it when Termix serves HTTPS itself. If a reverse proxy like Caddy or Traefik
 
 ## Set it up
 
-1. Install the plugin from the **Plugins** tab.
-2. Open **Settings**, then **ACME Certificates**.
-3. Fill in **Domain** and **Email**.
-4. Pick a **Certificate authority**. Try **Let's Encrypt (staging)** first if you are testing. Staging certificates are not trusted by browsers, but they don't count against Let's Encrypt's rate limits.
-5. Pick a **Challenge type**. For the DNS challenge, paste your **Cloudflare API token**.
-6. Turn on **Renew automatically** and save.
-7. Press **Request certificate now**.
+1. Install the plugin from the Plugins tab.
+2. Open Settings, then ACME Certificates.
+3. Fill in Domain and Email.
+4. Pick a Certificate authority. Try Let's Encrypt (staging) first if you are testing. Staging certificates are not trusted by browsers, but they don't count against Let's Encrypt's rate limits.
+5. Pick a Challenge type. For the DNS challenge, paste your Cloudflare API token.
+6. Turn on Renew automatically and save.
+7. Press Request certificate now.
 
 Once it is issued, Termix serves it over HTTPS at once. The status at the top of the page shows the names it covers, who issued it and when it expires.
 
 ## Renewing
 
-With **Renew automatically** on, the plugin checks twice a day. It gets a new certificate when there is none, when it doesn't cover the domain any more, or when it expires within 30 days. If a renewal fails, admins get an alert.
+With Renew automatically on, the plugin checks twice a day. It gets a new certificate when there is none, when it doesn't cover the domain any more, or when it expires within 30 days. If a renewal fails, admins get an alert.
 
-The **SSL** page in **Settings** shows that ACME Certificates renews the certificate. If you turn the plugin off, the last certificate keeps being served until it expires.
+The SSL page in Settings shows that ACME Certificates renews the certificate. If you turn the plugin off, the last certificate keeps being served until it expires.
 
 ## Another certificate authority
 
-Pick **Custom ACME directory** and paste the authority's directory URL. It must be https. This works with Buypass, step-ca and other authorities that don't need external account binding (EAB). ZeroSSL needs EAB, so it does not work yet.
+Pick Custom ACME directory and paste the authority's directory URL. It must be https. This works with Buypass, step-ca and other authorities that don't need external account binding (EAB). ZeroSSL needs EAB, so it does not work yet.
 
 ## Troubleshooting
 
