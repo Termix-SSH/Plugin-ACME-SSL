@@ -6,8 +6,8 @@ Use it when Termix serves HTTPS itself. If a reverse proxy like Caddy or Traefik
 
 - A public domain name that points at your Termix server, like `termix.example.com`.
 - One of:
-  - **Port 80** on that domain reaching Termix, for the HTTP challenge. In Docker, publish it: `"80:8080"`.
-  - **A Cloudflare API token** with `Zone:DNS:Edit` on the domain, for the DNS challenge. Port 80 can stay closed.
+  - Port 80 on that domain reaching Termix, for the HTTP challenge. In Docker, publish it: `"80:8080"`.
+  - A Cloudflare API token with `Zone:DNS:Edit` on the domain, for the DNS challenge. Port 80 can stay closed.
 - Port `8443` published, so the certificate can be served. See [HTTPS](/configure/https).
 
 ## Set it up
@@ -34,6 +34,6 @@ Pick Custom ACME directory and paste the authority's directory URL. It must be h
 
 ## Troubleshooting
 
-- **The HTTP challenge fails.** Let's Encrypt has to reach `http://your-domain/.well-known/acme-challenge/` from the internet. Check port 80 is forwarded to Termix and nothing else answers it first. Behind a reverse proxy, forward that path to Termix too.
-- **The DNS challenge fails.** Check the token has `Zone:DNS:Edit` on the right zone.
-- **Rate limited.** Let's Encrypt limits how often you can ask for the same domain. Use staging while you test.
+- The HTTP challenge fails: Let's Encrypt has to reach `http://your-domain/.well-known/acme-challenge/` from the internet. Check port 80 is forwarded to Termix and nothing else answers it first. Behind a reverse proxy, forward that path to Termix too.
+- The DNS challenge fails: Check the token has `Zone:DNS:Edit` on the right zone.
+- Rate limited: Let's Encrypt limits how often you can ask for the same domain. Use staging while you test.
