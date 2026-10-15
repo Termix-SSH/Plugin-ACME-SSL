@@ -6,6 +6,12 @@
 
 <p>Gets the Termix HTTPS certificate from Let's Encrypt or any ACME provider and renews it for you</p>
 
+<!-- VIDEO:START -->
+
+<a href="https://www.youtube.com/watch?v=nJ6jDhurJRo"><img src="https://img.shields.io/badge/Watch_the_demo-f59145?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch the demo on YouTube" /></a>
+
+<!-- VIDEO:END -->
+
 </div>
 
 <br />
