@@ -40,6 +40,7 @@ describe("acme-ssl activate", () => {
   it("registers the status settings component and removes it on deactivate", async () => {
     rendered = await renderWithApp(plugin, { manifest, locales });
     expect(rendered.registered.settingsComponents()).toEqual(["status"]);
+    expect(rendered.registered.dashboardCards()).toEqual(["acme-certificate"]);
     await rendered.deactivate();
     expect(rendered.registered.settingsComponents()).toEqual([]);
     rendered = null;
@@ -81,5 +82,14 @@ describe("AcmeStatusSetting", () => {
     );
     expect(screen.getByText("status.lastError rate limited")).toBeTruthy();
     expect(api.get).toHaveBeenCalledWith("/status");
+  });
+});
+
+describe("AcmeCard", () => {
+  it("counts the days the certificate has left", async () => {
+    const { daysLeft } = await import("../../src/frontend/AcmeCard");
+    const now = Date.parse("2026-10-21T00:00:00.000Z");
+    expect(daysLeft("2026-10-31T12:00:00.000Z", now)).toBe(10);
+    expect(daysLeft("2026-10-01T00:00:00.000Z", now)).toBe(0);
   });
 });
