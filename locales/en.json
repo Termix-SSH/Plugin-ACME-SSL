@@ -60,6 +60,10 @@
     "name": "ACME Certificates",
     "description": "Gets the Termix HTTPS certificate from Let's Encrypt or any ACME provider and renews it for you."
   },
+  "widget": {
+    "name": "HTTPS certificate",
+    "description": "How long the HTTPS certificate has left."
+  },
   "card": {
     "title": "HTTPS certificate",
     "denied": "Only admins who manage certificates see this.",

@@ -136,6 +136,7 @@
         }
       ]
     },
+    "uses": ["homepage.widgets"],
     "dashboardCards": [
       {
         "id": "acme-certificate",

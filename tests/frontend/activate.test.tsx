@@ -41,6 +41,9 @@ describe("acme-ssl activate", () => {
     rendered = await renderWithApp(plugin, { manifest, locales });
     expect(rendered.registered.settingsComponents()).toEqual(["status"]);
     expect(rendered.registered.dashboardCards()).toEqual(["acme-certificate"]);
+    expect(rendered.registered.extensions("homepage.widgets")).toEqual([
+      "https_certificate",
+    ]);
     await rendered.deactivate();
     expect(rendered.registered.settingsComponents()).toEqual([]);
     rendered = null;
