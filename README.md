@@ -30,6 +30,8 @@ Read the [docs](https://docs.termix.site/plugins/acme-ssl) to set it up and use 
 - HTTP challenge on port 80, or a Cloudflare DNS challenge when port 80 is closed
 - Renews before the certificate expires
 - Swaps in the new certificate without a restart
+- A DNS challenge at any provider the DNS plugin supports
+- Days left on the certificate as a status tile, with Request a certificate now as its fix
 
 <br />
 

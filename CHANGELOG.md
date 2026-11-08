@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.0
+
+### Added
+
+- A DNS plugin challenge type that answers the DNS challenge at any provider the DNS plugin supports
+- How long the HTTPS certificate has left shows as a status tile, with Request a certificate now as its fix through Termix actions
+
+### Changed
+
+- Needs Termix 26.11.1 or newer
+- Toolbars, loading screens, back buttons and Save bars match the rest of Termix
+
 ## 1.1.0
 
 ### Added

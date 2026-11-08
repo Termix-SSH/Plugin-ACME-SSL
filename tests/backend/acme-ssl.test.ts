@@ -197,6 +197,23 @@ describe("scheduled renewal", () => {
     ]);
   });
 
+  it("warns admins when the certificate is close to its end", async () => {
+    const { mock, runner } = await setup({
+      settings: { ...CONFIGURED, autoRenew: false },
+      certificate: cert({
+        notAfter: new Date(Date.now() + 5 * DAY).toISOString(),
+      }),
+    });
+    await runner.check();
+    await runner.check();
+    expect(mock.notifications).toHaveLength(2);
+    expect(mock.notifications[0].notification).toMatchObject({
+      category: "acme-ssl.expiring",
+      audience: "admins",
+      severity: "warning",
+    });
+  });
+
   it("waits before retrying after a failed attempt", async () => {
     const { mock, runner } = await setup({ settings: CONFIGURED });
     issue.mockRejectedValueOnce(new Error("rate limited"));

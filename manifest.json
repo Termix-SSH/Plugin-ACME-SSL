@@ -1,7 +1,7 @@
 {
   "id": "acme-ssl",
   "name": "ACME Certificates",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Gets the Termix HTTPS certificate from Let's Encrypt or any ACME provider and renews it for you.",
   "author": {
     "name": "Termix"
@@ -20,9 +20,16 @@
     "A dashboard card that shows when the certificate expires"
   ],
   "engine": {
-    "termix": ">=26.10.0",
-    "api": "^1.2"
+    "termix": ">=26.11.1-0",
+    "api": "^1.15"
   },
+  "requires": [
+    {
+      "service": "dns.records",
+      "versionRange": "^1.0.0",
+      "optional": true
+    }
+  ],
   "capabilities": [
     "system:tls",
     "kv:own",
@@ -30,7 +37,9 @@
     "network:outbound",
     "network:serve",
     "notify:send",
-    "ui:surface"
+    "ui:surface",
+    "operations:provide",
+    "users:impersonate"
   ],
   "contributes": {
     "permissions": [
@@ -113,6 +122,10 @@
             {
               "value": "dns-cloudflare",
               "labelKey": "settings.challengeType.cloudflare"
+            },
+            {
+              "value": "dns-plugin",
+              "labelKey": "settings.challengeType.dns"
             }
           ]
         },
@@ -124,13 +137,51 @@
         }
       ]
     },
+    "uses": ["homepage.widgets"],
     "dashboardCards": [
       {
         "id": "acme-certificate",
         "titleKey": "card.title",
         "icon": "ShieldCheck"
       }
-    ]
+    ],
+    "operations": {
+      "actions": [
+        {
+          "id": "acme-ssl.certificate",
+          "titleKey": "operations.certificate.title",
+          "scope": "server",
+          "risk": "read",
+          "permission": "manage",
+          "surfaces": {
+            "assistant": true,
+            "mcp": true,
+            "palette": false
+          }
+        },
+        {
+          "id": "acme-ssl.request",
+          "titleKey": "operations.request.title",
+          "icon": "BadgeCheck",
+          "scope": "server",
+          "risk": "change",
+          "permission": "manage",
+          "dryRun": "describe",
+          "timeoutMs": 600000
+        }
+      ],
+      "signals": [
+        {
+          "id": "acme-ssl.expiry",
+          "titleKey": "operations.certificate.title",
+          "read": "acme-ssl.certificate",
+          "scope": "server",
+          "kind": "gauge",
+          "refreshSec": 3600,
+          "fix": "acme-ssl.request"
+        }
+      ]
+    }
   },
   "locales": "locales",
   "platforms": ["linux", "win32", "darwin"],
