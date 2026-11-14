@@ -77,6 +77,7 @@ async function setup(
     certificate: options.certificate === undefined ? null : options.certificate,
   };
   const mock: MockPluginContext = createMockCtx({
+    sandbox: true,
     pluginId: manifest.id,
     manifest,
     capabilities: options.capabilities ?? manifest.capabilities,
