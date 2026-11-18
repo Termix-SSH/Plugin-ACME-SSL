@@ -12,10 +12,11 @@ function ctxWith(
     actor: "admin",
   },
 ) {
+  // Async like in a plugin process, where every services call is a promise.
   return {
     services: {
-      providers: () => providers,
-      get: options.get ?? (() => service),
+      providers: async () => providers,
+      get: options.get ?? (async () => service),
     },
     kv: { get: async () => options.stored ?? null, set: vi.fn() },
     currentActor: () => options.actor,
